@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="img/jedi.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <title> PORTFOLIO-TUSHAR</title>
+    
+  </head>
+  <body>
+    
+    <!-- Navigation Bar -->
+     
+    <header id="header">
+      <nav class="navbar">
+        <div class="navbar-brand">Portfolio</div>
+        <ul class="navbar-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 3D Space Warp Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Content that will load after 5 seconds -->
+    <div id="content" >
+      <!-- About Section -->
+      <section id="about">
+        <div class="about-container">
+          
+          <div class="about-left">
+            
+            <h2 class="about-head">Hi, I am Tushar</h2>
+            <h3 class="about-sub-head">I am a Frontend Developer</h3>
+            <p>
+              Hello! I'm Tushar, a passionate and eager learner currently diving into the world of web development, 
+              UI design, and artificial intelligence. 
+              As a fresher, I have a strong foundation in frontend technologies, 
+              and I love bringing creative ideas to life through clean, user-friendly interfaces. 
+              <br/>
+              My curiosity in AI drives me to explore how technology can shape the future. I'm excited to grow, learn, and 
+              collaborate on meaningful projects that push the boundaries of what's possible.
+            </p>
+            <button id="downloadBtn">Download Resume</button>
+          </div>
+
+          <div class="about-right">
+            <img src="img/Star Wars.jpeg" alt="Profile Picture" id="profile-img">
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Placeholder sections for skills, experience, and contact -->
+      <section id="skills">
+        <h2 class="head">Skills</h2>
+        <div class="container">
+
+          
+          <!-- <h3>Technical Expertise & Core Skills</h3> -->
+          <div id="skills-container">
+            <div class="skill">
+              <h3 class="about-sub-head" id="skills-title">Frontend</h3>
+              <div class="area">
+                <div class="comcon">
+                  <img src="img/atom.png" alt="react">
+                  <p>react</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/html.png" alt="html">
+                  <p>html</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/css.png" alt="css">
+                  <p>css</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/js.png" alt="js">
+                  <p>js</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/Tailwind CSS.png" alt="tailwind">
+                  <p>tailwind css</p>
+                </div>
+              </div>
+            </div>
+            <div class="skill">
+              <h3 class="about-sub-head" id="skills-title">Languages</h3>
+              <div class="area">
+                <div class="comcon">
+                  <img src="img/c-.png" alt="c++">
+                  <p>c++</p>
+                </div>
+
+                <div class="comcon">
+                  <img src="img/python.png" alt="python">
+                  <p>python</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/C_PRG.png" alt="c">
+                  <p>c</p>
+                </div>
+              </div>
+            </div>
+            <div class="skill">
+              <h3 class="about-sub-head" id="skills-title">Others</h3>
+              <div class="area">
+                <div class="comcon">
+                  <img src="img/mysql.png" alt="mysql">
+                  <p>mysql</p>
+                </div>
+
+                <div class="comcon">
+                  <img src="img/git.png" alt="git">
+                  <p>git</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/github.png" alt="github">
+                  <p>github</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/figma.png" alt="figma">
+                  <p>figma</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/python.png" alt="python">
+                  <p>python</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/MATLAB.png" alt="matlab">
+                  <p>matlab</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/Android Studio.png" alt="AS">
+                  <p>android studio</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/Visual Studio Code (VS Code).png" alt="Visual Studio Code (VS Code)">
+                  <p>VS Code</p>
+                </div>
+                <div class="comcon">
+                  <img src="img/Canva.png" alt="canva">
+                  <p>canva</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+<!--  -->
+      <section id="projects">
+        <h2 class="head">Projects</h2>
+        <div class="container" id="projects-container">
+            <div class="projects-container">
+              <img src="img/inventory.png" class="img-circle">
+              <h3 class="about-sub-head" id="project-title">Inventory <br> MAnagement</h3>
+              <p class="p-para">This system is designed to streamline the process of tracking and managing inventory for any organization, 
+                ensuring efficient stock control and timely restocking</p>
+              
+             
+            </div>
+            <div class="projects-container">
+              <img src="img/herobg.png" class="img-circle">
+              <h3 class="about-sub-head" id="project-title">Echo Events</h3>
+              <p class="p-para"> A web app designed to keep students and faculty members updated with the latest 
+                events happening across various colleges and campus under Delhi University (DU), providing real-time 
+                information about upcoming events </p>
+              
+            </div>
+            <div class="projects-container">
+              <img src="img/placement.png" class="img-circle">
+              <h3 class="about-sub-head" id="project-title">Placement cell </h3>
+              <p class="p-para">
+                The Placement Cell Web App is a dedicated platform designed to streamline the 
+                placement process for students and recruiters  </p>
+              
+            </div>
+           
+    </section>
+<!--  -->
+      <section id="experience">
+        <h2 class="head" >Experience</h2>
+        <div class="container" id="experience-container">
+      
+            <div class="ex-container" id="exper-left">
+              <img src="img/DRDO-logo.png" class="img-exp">
+              <h3 class="about-sub-head" id="ex-title">DRDO SSPL summer internship</h3>
+              <p>14th June 2024 – 9th August 2024</p>
+              <p class="p-para" style="margin-bottom: 1.5rem;">Gained hands-on experience in web development, working on real-world projects. <br/>
+                Enhanced technical skills by developing and optimizing web components. <br/>
+                Collaborated with the team to implement solutions aligned with project requirements. <br/>
+                Improved problem-solving abilities while working in a research-driven environment.</p>
+
+              <p style="display: flex; justify-content:flex-start; margin: 1.5rem;">html | css | js | bootstrap | php | mongoDB</p>
+              <a href="https://www.linkedin.com/in/tushar-483030300/details/certifications/" target="_blank">View</a>
+            </div>
+         
+
+          
+            <div class="ex-container" id="exper-right">
+
+              <img src="img/microsoft (1).png" class="img-exp">
+              <img src="img/linkedin (2).png" class="img-exp">
+              <h3 class="head" id="ex-title">Carrier Essentials in Generative AI </h3>
+              <p>7 July 2024</p>
+              <p class="p-para">Gained foundational knowledge in Generative AI concepts, tools, and applications. <br/>
+                Explored AI-driven content generation, language models, and their real-world impact.<br/>
+                Developed skills to leverage AI technologies effectively in various domains.<br/>
+                Earned certification upon successfully completing the program.</p>
+
+                <p style="display: flex; justify-content:flex-start; margin: 1.5rem;"> computer Ethics | artificial intelligence (AI) | generative AI </p>
+              <a href="https://www.linkedin.com/learning/certificates/26dd12318cd7b22a1a92c04601341061cf742752c5b564b8fc4862a726be4a99" target="_blank">View</a>
+            </div>
+          
+
+        </div>
+      
+    </section>
+
+      <section id="Education">
+        <h2 class="head">Education</h2>
+        <div class="container" id="ed-cards">
+
+          <div class="ed-container" id="ed-ms">
+            <h3 class="head" id="ed-head">Institute of Informatics and communication,<br/> Delhi University</h3>
+            <h3>Masters of Science in Informatics </h3>
+            <p class="para">2023 - 2025</p>
+          </div>
+
+          <div class="ed-container" id="ed-grad">
+            <h3 class="head" id="ed-head">Maharaja Agrasen College, Delhi University</h3>
+            <h3>Bachelor of Science (Hons.) in Electronic Science</h3>
+            <p class="para">2020 - 2023</p>
+          </div> 
+        
+        </div>
+      </section>
+
+
+      <section id="contact">
+        <div class="container">
+          <h2 class="head">Contact</h2>
+
+          <a href=""><img src="" alt=""></a>
+          <a href=""><img src="" alt=""></a>
+          <a href=""><img src="" alt=""></a>
+          <a href=""><img src="" alt=""></a>
+        </div>
+      </section>
+    <div>
+
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
