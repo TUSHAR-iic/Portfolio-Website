@@ -11,6 +11,7 @@ body {
   background: black;
   overflow: hidden;
   overflow-y: auto; 
+  
 }
 
 
@@ -62,6 +63,7 @@ header {
   z-index: 100; /* Set a high z-index */
   padding: 100px 20px;
   min-height : 100vh;
+  background: transparent;
 }
 #contact{
   position: relative; /* Ensure it can be layered */
@@ -76,7 +78,7 @@ header {
   text-align: center;
   margin-top: 70px;
   color: white;
-  
+  background:none;
   
 }
 
@@ -452,6 +454,7 @@ canvas {
   margin-top: 1.5rem;
   font-size: 1.1rem;
   cursor: pointer;
+  color: #680268;
 }
 .ex-container a:hover{
  color: #800080;
@@ -519,4 +522,12 @@ transform: translatex(0px);
 }
 .para{
   font-size: 1rem;
+}
+
+#modelCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101; /* Above content */
+
 }

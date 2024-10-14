@@ -12,10 +12,10 @@ const renderer = new THREE.WebGLRenderer({
   alpha: true, // Enable transparency for the canvas background
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.domElement.style.position = 'absolute'; // Position canvas on top
+renderer.domElement.style.position = 'fixed'; // Position canvas on top
 renderer.domElement.style.top = 0;
 renderer.domElement.style.left = 0;
-renderer.domElement.style.zIndex = 1000; // Ensure highest z-index
+renderer.domElement.style.zIndex = -1; // Ensure highest z-index
 camera.position.z = 30; // Set initial camera position
 
 // Orbit controls for user interaction
