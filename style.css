@@ -120,9 +120,18 @@ header {
 #profile-img {
   max-width: 60%; /* Responsive image */
   border-radius: 50%;
-  box-shadow: 1px 1px 50px rgb(251, 233, 35);
+  /* box-shadow: 1px 1px 0px rgb(251, 233, 35); */
   height: auto;
+  transition: all 0.2s ease; /* Smooth transition on hover */
 }
+
+/* Remove blur on hover */
+#profile-img:hover {
+  transform: translateY(-10px);
+  border: 2px solid rgb(251, 233, 35);
+  
+}
+
 
 
 .about-left {
@@ -141,15 +150,20 @@ header {
   font-family: 'SF Distant Galaxy AltOutline',sans-serif;
   /* margin-top: 5rem; */
   margin-bottom: 2px;
-  color: #ffffff;
+  color: rgb(251, 233, 35);
 }
 
 .about-sub-head {
   font-size: 2rem;
   font-family: 'SF Distant Galaxy AltOutline',sans-serif;
   color: #ffffff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
+#typingText {
+  color: rgb(251, 233, 35) ; 
+  margin-bottom:1.5rem;
+  }
+
 .about-left p{
 
   font-family: 'poppins',sans-serif;
@@ -529,5 +543,39 @@ transform: translatex(0px);
   top: 0;
   left: 0;
   z-index: 101; /* Above content */
+
+}
+
+#contact{
+  background-image: url(img/mars.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  /* background-blend-mode: overlay; */
+  
+                 /* Center the image */
+  
+  opacity: 0.3;                               /* Adjust transparency (0 = fully transparent) */
+  /* z-index: -1;   */
+}
+.anchor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-direction:row ;
+  max-width:1200px;
+}
+.contact-img{
+  height: 2.8rem;
+  width: 2.8rem;
+  cursor: pointer;
+
+}
+.anchor a{
+  margin-top:1.5rem;
+  text-decoration:none;
+  cursor : pointer;
+  z-index: 100;
 
 }

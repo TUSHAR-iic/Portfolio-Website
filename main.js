@@ -112,6 +112,53 @@ function addStar() {
 
 Array(600).fill().forEach(addStar);
 
+// function for glowing stars
+function createGlowingSphere(color) {
+  const geometry = new THREE.SphereGeometry(0.2, 24, 24);
+  const material = new THREE.MeshStandardMaterial({ 
+    color: color,
+    emissive: color,
+    emissiveIntensity: 0.5 
+  });
+  const sphere = new THREE.Mesh(geometry, material);
+
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(200));
+  sphere.position.set(x, y, z);
+  sphere.originalY = y; // Store original Y position for movement
+  scene.add(sphere);
+  
+  return sphere;
+}
+
+const colors = ['#FF0000', '#0000FF', '#00FF00', '#800080', '#FFFF00', '#FFC0CB', '#FFA500'];
+const spheres = [];
+for (let i = 0; i < 100; i++) {
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  spheres.push(createGlowingSphere(color));
+}
+
+function animateSpheres() {
+  spheres.forEach(sphere => {
+    sphere.position.y = sphere.originalY + Math.sin(Date.now() * 0.001 + sphere.position.x) * 2; // Levitate up and down
+    sphere.position.x += Math.sin(Date.now() * 0.002 + sphere.position.y) * 0.02; // Move horizontally
+    sphere.position.z += Math.cos(Date.now() * 0.002 + sphere.position.y) * 0.02; // Move depth
+  });
+}
+
+// function for collision
+function checkCollisions() {
+  if (!falconModel) return;
+
+  spheres.forEach((sphere, index) => {
+    const distance = falconModel.position.distanceTo(sphere.position);
+    if (distance < 1.0) { // If the model is touching the sphere
+      scene.remove(sphere); // Remove the sphere from the scene
+      spheres.splice(index, 1); // Remove the sphere from the array
+    }
+  });
+}
+
+
 // Animation loop
 let animationRunning = true;
 let startTime = Date.now();
@@ -119,6 +166,8 @@ let startTime = Date.now();
 function animate() {
   requestAnimationFrame(animate);
   moveFalcon(); // Handle movement
+  animateSpheres();
+  checkCollisions(); 
 
   const elapsedTime = Date.now() - startTime;
   if (elapsedTime < 6000) {
@@ -175,3 +224,35 @@ navLinks.forEach(link => {
     });
   });
 });
+
+const typingText = document.getElementById('typingText');
+const texts = ["frontend developer", "UI designer"];
+let textIndex = 0;
+let charIndex = 0;
+let typingSpeed = 100; // Adjust typing speed (in ms)
+let erasingSpeed = 50; // Adjust erasing speed (in ms)
+let pauseTime = 2000; // Time before starting to erase
+
+function typeText() {
+  if (charIndex < texts[textIndex].length) {
+    typingText.textContent += texts[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeText, typingSpeed);
+  } else {
+    setTimeout(eraseText, pauseTime); // Time before starting to erase
+  }
+}
+
+function eraseText() {
+  if (charIndex > 0) {
+    typingText.textContent = texts[textIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseText, erasingSpeed);
+  } else {
+    textIndex = (textIndex + 1) % texts.length; // Move to the next text
+    setTimeout(typeText, 500); // Time before starting to type again
+  }
+}
+
+// Start the typing animation
+typeText();
