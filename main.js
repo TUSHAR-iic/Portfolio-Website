@@ -145,37 +145,30 @@ function animateSpheres() {
   });
 }
 
-// function for collision
-function checkCollisions() {
-  if (!falconModel) return;
-
-  spheres.forEach((sphere, index) => {
-    const distance = falconModel.position.distanceTo(sphere.position);
-    if (distance < 1.0) { // If the model is touching the sphere
-      scene.remove(sphere); // Remove the sphere from the scene
-      spheres.splice(index, 1); // Remove the sphere from the array
-    }
-  });
-}
 
 
 // Animation loop
 let animationRunning = true;
 let startTime = Date.now();
+const centerText = document.getElementById('centerText');
 
 function animate() {
   requestAnimationFrame(animate);
   moveFalcon(); // Handle movement
   animateSpheres();
-  checkCollisions(); 
+  animateSpheres();
+  
 
   const elapsedTime = Date.now() - startTime;
+
   if (elapsedTime < 6000) {
+    centerText.style.opacity = 1;
     camera.position.z -= 0.5;
     scene.rotation.x += 0.0005;
     scene.rotation.y += 0.001;
   } else if (animationRunning) {
     animationRunning = false;
+    centerText.style.opacity = 0;
     const contentDiv = document.getElementById('content');
     contentDiv.classList.add('visible');
     document.body.style.overflowY = 'auto';

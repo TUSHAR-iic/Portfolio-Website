@@ -579,3 +579,19 @@ transform: translatex(0px);
   z-index: 100;
 
 }
+
+#centerText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: 'SF Distant Galaxy AltOutline',sans-serif;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: rgb(251, 233, 35);
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  z-index: 10;
+  text-align: center;
+}
