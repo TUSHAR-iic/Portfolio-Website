@@ -58,7 +58,7 @@ const loader = new GLTFLoader();
 let falconModel;
 
 loader.load(
-  './millennium_falcon/scene.gltf',
+  '/millennium_falcon/scene.gltf',
   (gltf) => {
     falconModel = gltf.scene;
     falconModel.scale.set(3, 3, 3);
